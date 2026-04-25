@@ -1,0 +1,58 @@
+# Walkthrough - ImageX Offline Image Generator
+
+I have successfully built **ImageX**, a fully offline, professional-grade Text-to-Image generation application. Every file has been generated according to your exact folder structure requirements.
+
+## Project Structure Overview
+
+- **Frontend**: A modern, premium dark-themed UI built with Vanilla JS and CSS. It features a responsive layout, micro-animations, and real-time generation feedback.
+- **Backend**: A Flask server that handles image generation using the `diffusers` library (Stable Diffusion v1.5). It includes a prompt enhancement engine that can optionally use local Ollama.
+- **Database**: A SQLite-backed history system that stores your prompts, seeds, and metadata without any external dependencies.
+- **Automation**: Scripts for one-click setup, model downloading, and database management.
+
+## Key Features Implemented
+
+- **Local Generation**: Uses your machine's hardware (GPU or CPU) for private generation.
+- **Multilingual Support**: Detects non-English prompts and enhances them for better results.
+- **Smart Settings**: Toggleable chips for Steps, CFG Scale, Image Size, Seed, and **Style Presets**.
+- **Style Presets**: One-click magic to apply styles like Cinematic, Studio Ghibli, Oil Painting, and more.
+- **Persistent History**: A collapsible horizontal gallery showing your recent work.
+- **Instant Actions**: Download generated images or regenerate with the same parameters instantly.
+
+## Next Steps for You
+
+To get started, please follow these steps in your terminal:
+
+1.  **Install Dependencies**:
+    ```powershell
+    pip install -r requirements.txt
+    ```
+
+2.  **Run Automated Setup**:
+    This will create the necessary folders and ask if you want to download the 4GB AI model.
+    ```powershell
+    python scripts/setup.py
+    ```
+
+3.  **Start the Application**:
+    ```powershell
+    python run.py
+    ```
+
+4.  **Open the UI**:
+    Go to [http://127.0.0.1:5000](http://127.0.0.1:5000) or [http://localhost:5000](http://localhost:5000) in your browser.
+
+TIP: If you have an NVIDIA GPU, make sure you have CUDA installed for lightning-fast image generation!
+
+---
+
+### Folder Map
+```text
+imageX/
+├── frontend/        # Main UI (HTML/CSS/JS)
+├── backend/         # Flask & Stable Diffusion
+├── database/        # SQLite Storage
+├── models/          # AI Model weights
+├── outputs/         # Saved images
+├── scripts/         # Setup & Reset tools
+└── run.py           # Start script
+```

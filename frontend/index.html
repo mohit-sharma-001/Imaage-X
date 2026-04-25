@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageX — Offline AI Image Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SECTION A: HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <h1>ImageX <span class="badge badge-version">v1.0</span></h1>
+                <p class="tagline">your words. your images. your machine.</p>
+            </div>
+            <div class="header-right">
+                <div class="status-pill" id="statusOffline">
+                    <span class="dot dot-offline">●</span> OFFLINE
+                </div>
+                <div class="status-pill" id="statusDb">
+                    <span class="dot dot-db">●</span> DB CONNECTED
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION B: INPUT PANEL -->
+        <main class="input-panel card">
+            <div class="textarea-wrapper">
+                <textarea id="promptInput" placeholder="describe what you want to see..." spellcheck="false" lang="mul" dir="auto"></textarea>
+            </div>
+            
+            <div class="settings-row">
+                <div class="chip" id="chipSteps" data-value="25">Steps: 25</div>
+                <div class="chip" id="chipCfg" data-value="7.5">CFG: 7.5</div>
+                <div class="chip" id="chipSize" data-value="512x512">Size: 512x512</div>
+                <div class="chip" id="chipSeed" data-value="random">Seed: random</div>
+                <div class="chip" id="chipStyle" data-value="None">Style: None</div>
+            </div>
+
+            <div class="inline-control-panel" id="controlPanel">
+                <!-- Inline controls injected here by JS -->
+            </div>
+
+            <div class="generate-wrapper">
+                <button id="generateBtn" class="btn-generate">Generate Image</button>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <p id="statusLine" class="status-line">model ready — imageX v1.0</p>
+            </div>
+        </main>
+
+        <!-- SECTION C: OUTPUT PANEL -->
+        <section id="outputPanel" class="output-panel card">
+            <div class="output-image-container">
+                <img id="generatedImage" src="" alt="Generated artwork">
+            </div>
+            
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn-secondary">↓ Download</button>
+                <button id="regenerateBtn" class="btn-secondary">↺ Regenerate</button>
+                <button id="clearBtn" class="btn-secondary">✕ Clear</button>
+            </div>
+
+            <div class="metadata-block" id="imageMetadata">
+                <!-- Metadata items -->
+            </div>
+        </section>
+
+        <!-- SECTION D: HISTORY PANEL -->
+        <footer class="history-panel card">
+            <div class="history-header">
+                <div class="history-title-group">
+                    <h2>Recent generations</h2>
+                    <span id="historyCount" class="count-badge">0</span>
+                </div>
+                <button id="toggleHistory" class="btn-toggle">↑</button>
+            </div>
+            
+            <div id="historyList" class="history-list">
+                <!-- History cards injected here -->
+            </div>
+            
+            <div class="history-footer">
+                <button id="clearHistoryBtn" class="btn-danger">Clear History</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

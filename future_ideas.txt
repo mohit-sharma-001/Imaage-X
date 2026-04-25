@@ -1,0 +1,43 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMAGE X — FUTURE ROADMAP & FEATURE IDEAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. STYLE PRESETS (ONE-CLICK MAGIC)
+   - Add a dropdown menu to the UI with predefined styles.
+   - Examples: Cinematic, Studio Ghibli, Oil Painting, 3D Render, Cyberpunk.
+   - Logic: Appends specific "trigger words" to the user's prompt automatically.
+
+2. NEGATIVE PROMPT UI
+   - Add a second textarea for "Things to exclude".
+   - This gives the user control to remove blurry parts, text, or unwanted colors.
+
+3. IMAGE-TO-IMAGE (IMG2IMG)
+   - Add an upload zone for images.
+   - Use the uploaded image as a structural guide for the generation.
+   - Great for sketches, color maps, or transforming existing photos.
+
+4. AI UPSCALER (SUPER RESOLUTION)
+   - Use a lightweight ESRGAN or Real-ESRGAN model.
+   - Allow users to "Upscale 4x" any generated image without using the heavy SD model.
+   - Perfect for low-spec systems (like i3 CPUs) to get high-res results.
+
+5. OFFLINE VOICE-TO-PROMPT
+   - Integrate OpenAI Whisper (Tiny) for local speech-to-text.
+   - Users can dictate prompts instead of typing.
+
+6. PROMPT HISTORY SEARCH & FAVORITES
+   - Add a "Star" icon to history cards.
+   - Create a "Favorites" tab in the history panel.
+   - Add a search bar to filter past generations by keywords.
+
+7. INPAINTING (LOCAL EDITING)
+   - Allow users to "paint" over a part of an image (e.g., the face) and change only that part.
+   - Use the SD Inpainting pipeline for this.
+
+8. BATCH GENERATION
+   - Add a toggle for "Count: 1 / 2 / 4".
+   - Generate multiple variations of the same prompt in one go.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"Your words. Your images. Your machine."
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
