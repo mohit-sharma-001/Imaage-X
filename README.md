@@ -1,5 +1,8 @@
 # ImageX — Offline Text-to-Image Generator
 
+> [!TIP]
+> **Check out the [Update_1 branch](https://github.com/mohit-sharma-001/Imaage-X/tree/Update_1) to see the redesigned Premium UI and enhanced history features!**
+
 **your words. your images. your machine.**
 
 ImageX is a high-performance, private, and fully offline AI image generation suite. It runs Stable Diffusion v1.5 locally on your hardware, requiring no cloud subscriptions, no API keys, and zero internet connection after the initial setup.
