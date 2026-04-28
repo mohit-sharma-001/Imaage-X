@@ -53,6 +53,23 @@ def get_generation_by_id(gen_id: int) -> dict:
     finally:
         conn.close()
 
+def delete_generation(gen_id: int) -> bool:
+    """Deletes a specific generation record."""
+    conn = get_connection()
+    try:
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM generations WHERE id = ?", (gen_id,))
+        count = cursor.rowcount
+        if count > 0:
+            cursor.execute("UPDATE app_meta SET value = CAST(value AS INTEGER) - 1 WHERE key = 'total_generated'")
+        conn.commit()
+        return count > 0
+    except Exception as e:
+        print(f"Error deleting generation: {e}")
+        return False
+    finally:
+        conn.close()
+
 def clear_all_generations() -> int:
     """Deletes all history and resets counter."""
     conn = get_connection()

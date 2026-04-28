@@ -31,12 +31,12 @@ const utils = {
      */
     rotatePlaceholder: (element) => {
         const placeholders = [
-            "describe what you want to see...",
-            "kya dekhna chahte ho? yahaan likho...",
-            "अपनी कल्पना लिखें...",
-            "لکھیں جو آپ دیکھنا چاہتے ہیں...",
-            "Décrivez votre image ici...",
-            "あなたのイメージを説明してください..."
+            "A futuristic city with neon lights, cinematic lighting...",
+            "Portrait of a cyberpunk warrior, highly detailed, 8k...",
+            "Lush forest with mystical creatures, oil painting style...",
+            "Studio Ghibli style landscape, sunset, vibrant colors...",
+            "3D render of a cute robot in a toy store, unreal engine...",
+            "Ocean waves hitting rocks at night, long exposure..."
         ];
         const randomIdx = Math.floor(Math.random() * placeholders.length);
         element.placeholder = placeholders[randomIdx];
@@ -58,10 +58,10 @@ const utils = {
             return { valid: false, error: "Prompt cannot be empty" };
         }
         if (trimmed.length < 3) {
-            return { valid: false, error: "Prompt is too short (min 3 chars)" };
+            return { valid: false, error: "Prompt is too short" };
         }
         if (trimmed.length > 500) {
-            return { valid: false, error: "Prompt is too long (max 500 chars)" };
+            return { valid: false, error: "Prompt is too long" };
         }
         return { valid: true, error: null };
     },
@@ -74,21 +74,21 @@ const utils = {
         if (!statusEl) return;
 
         statusEl.textContent = message;
-        
+
         // Clear existing classes
         statusEl.className = "status-line";
-        
+
         // Add type class
         if (type !== "idle") {
             statusEl.classList.add(`status-${type}`);
         }
 
-        // Color logic via CSS classes (defined in style.css or inline)
+        // Color logic via CSS classes
         const colors = {
-            idle: "#52526E",
-            loading: "#4F8EF7",
-            success: "#00C851",
-            error: "#FF4D4D"
+            idle: "#64748B",
+            loading: "#06B6D4",
+            success: "#8B5CF6",
+            error: "#EF4444"
         };
         statusEl.style.color = colors[type] || colors.idle;
     },
@@ -104,12 +104,12 @@ const utils = {
         if (diffInSeconds < 60) return "just now";
         if (diffInSeconds < 3600) return `${Math.floor(diffInSeconds / 60)}m ago`;
         if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)}h ago`;
-        
-        return date.toLocaleDateString('en-US', { 
-            month: 'short', 
-            day: 'numeric', 
-            hour: '2-digit', 
-            minute: '2-digit' 
+
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
         });
     }
 };

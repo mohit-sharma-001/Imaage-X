@@ -70,6 +70,20 @@ const api = {
     },
 
     /**
+     * DELETE /history/:id
+     */
+    deleteHistoryItem: async (id) => {
+        try {
+            const response = await fetch(`${BASE_URL}/history/${id}`, { method: "DELETE" });
+            const data = await response.json();
+            return data.success || false;
+        } catch (error) {
+            console.error("Failed to delete history item:", error);
+            return false;
+        }
+    },
+
+    /**
      * GET /status
      */
     getStatus: async () => {

@@ -2,7 +2,7 @@ import time
 from flask import Blueprint, request, jsonify
 from backend.prompt_engine import process_prompt
 from backend.pipeline import generate_image, model_loaded, device
-from database.queries import save_generation, get_recent_generations, clear_all_generations
+from database.queries import save_generation, get_recent_generations, clear_all_generations, delete_generation
 from database.db import check_connection
 from backend.config import VERSION, DEFAULT_STEPS, DEFAULT_CFG, DEFAULT_WIDTH, DEFAULT_HEIGHT
 
@@ -78,6 +78,12 @@ def handle_clear_history():
     """Clears all generation history."""
     count = clear_all_generations()
     return jsonify({"success": True, "deleted": count})
+
+@main_bp.route("/history/<int:gen_id>", methods=["DELETE"])
+def handle_delete_item(gen_id):
+    """Deletes a specific history item."""
+    success = delete_generation(gen_id)
+    return jsonify({"success": success})
 
 @main_bp.route("/status", methods=["GET"])
 def handle_status():
