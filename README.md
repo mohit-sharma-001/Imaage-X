@@ -9,7 +9,7 @@ ImageX is a high-performance, private, and fully offline AI image generation sui
 
 ---
 
-## 🚀 Key Features
+ Key Features
 - **Fully Offline:** All processing happens on your local GPU/CPU.
 - **Privacy First:** Your prompts and generated images never leave your machine.
 - **Multilingual Support:** Describe images in your native language (powered by local Ollama integration).
@@ -18,7 +18,7 @@ ImageX is a high-performance, private, and fully offline AI image generation sui
 
 ---
 
-## 🛠️ System Requirements
+ System Requirements
 - **OS:** Windows 10/11, macOS, or Linux.
 - **Python:** 3.9 or higher.
 - **RAM:** 8 GB minimum (16 GB recommended).
@@ -27,7 +27,7 @@ ImageX is a high-performance, private, and fully offline AI image generation sui
 
 ---
 
-## 📦 First-Time Setup
+ First-Time Setup
 
 ### Step 1: Install Dependencies
 Open your terminal in the project folder and run:
@@ -49,9 +49,7 @@ If you want to use prompts in languages other than English, install **Ollama** a
 ollama run llama3.2
 ```
 
----
-
-## 🚦 How to Run
+How to Run
 Once setup is complete, start the server:
 ```bash
 python run.py
